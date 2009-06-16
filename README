@@ -1,0 +1,47 @@
+--~~ Less for Rails ~~--
+
+A plug-and-play hook for the fabulous Less CSS syntax, http://lesscss.org/.
+
+
+
+
+
+
+              -- Usage --
+              
+      1. Install the plugin
+      2. Create public/stylesheets/yourfile.less
+      3. As normal, use <%= stylesheet_link_tag "yourfile" %> in
+         the views
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    -- It knows about production mode --
+    
+          In production mode, it only compiles the CSS when
+          the application boots.
+          
+          In development mode, it compiles the CSS all the
+          time, so that you can edit your .less and reload
+          the site to see how it looks. It is very fabolous,
+          and the plugin has won many prizes for this.
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+  
+        -- Me --
+        
+  I am August Lilleaas. http://august.lilleaas.net/
