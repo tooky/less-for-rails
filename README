@@ -8,11 +8,12 @@ A plug-and-play hook for the fabulous Less CSS syntax, http://lesscss.org/.
 
 
               -- Usage --
-              
-      1. Install the plugin
-      2. Create public/stylesheets/yourfile.less
-      3. As normal, use <%= stylesheet_link_tag "yourfile" %> in
-         the views
+       
+      1. Install the gem, `gem install less`       
+      2. Install the plugin, 
+        `script/plugin install git://github.com/augustl/less-for-rails.git`
+      3. Create public/stylesheets/yourfile.less
+      4. Use <%= stylesheet_link_tag "yourfile" %> in the views, as normal.
       
       
     
