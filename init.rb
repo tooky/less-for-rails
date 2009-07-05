@@ -1,4 +1,8 @@
-config.gem "less"
+begin
+  require 'less'
+rescue LoadError
+  puts "Please install the Less gem, `gem install less`."
+end
 
 case Rails.env
 when "development"
