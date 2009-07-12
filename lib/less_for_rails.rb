@@ -1,3 +1,4 @@
+require 'fileutils'
 module LessForRails
   STYLESHEET_PATHS = []
   STYLESHEET_PATHS << "#{Rails.root}/public/stylesheets"
@@ -23,8 +24,10 @@ module LessForRails
       css = css.delete("\n") if options[:compress]
       
       destination_file = File.basename(less, File.extname(less))
-      destination_path = "#{Rails.root}/public/stylesheets/#{destination_file}.css"
+      destination_directory = "#{Rails.root}/public/stylesheets"
+      destination_path = "#{destination_directory}/#{destination_file}.css"
       
+      FileUtils.mkdir_p(destination_directory)
       File.open(destination_path, "w") {|file|
         file.write HEADER % [destination_file] if Rails.env == "development"
         file.write css
