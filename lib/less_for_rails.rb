@@ -18,7 +18,8 @@ module LessForRails
   def run(options = {})
     less_sheets = STYLESHEET_PATHS.map {|p| Dir["#{p}/*.less"] }.flatten
     less_sheets.each {|less|
-      css = Less::Engine.new(File.read(less)).to_css(:desc)
+      engine = Less::Engine.new(File.read(less))
+      css = Less.version > "1.0" ? engine.to_css : engine.to_css(:desc)
       css = css.delete("\n") if options[:compress]
       
       destination_file = File.basename(less, File.extname(less))
