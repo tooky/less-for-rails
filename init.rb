@@ -1,8 +1,12 @@
 begin
-  config.gem "less"
   require 'less'
 rescue LoadError
-  puts "Please install the Less gem, `gem install less`."
+  begin
+    config.gem "less"
+    require 'less'
+  rescue LoadError
+    puts "Please install the Less gem, `gem install less`."
+  end
 end
 
 case Rails.env
